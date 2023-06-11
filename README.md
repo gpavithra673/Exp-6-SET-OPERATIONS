@@ -80,12 +80,18 @@ order by Name;
 ### INTERSECT:
 ```
 select Name from A1
-where A1.Name in (select Name from B1);
+INTERSECT
+select Name from B1
+order by Name;
+
 ```
 ### EXPECT :
 ```
 select Name from A1
-where A1.Name not in (select Name from B1);
+EXCEPT
+select Name from B1
+order by Name;
+
 ```
 ## OUTPUT:
 ### UNION:
